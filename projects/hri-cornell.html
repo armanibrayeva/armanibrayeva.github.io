@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRI Failure Detection in Emergency Medicine | Dr. Arman Ibrayeva</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#ffffff;--accent:#1b2e5a;--accent-light:rgba(27,46,90,0.07);
+  --text:#1a1a1a;--text-muted:#4a4a52;--text-dim:#8c8c96;--border:#e2e2e8;
+  --serif:'Libre Baskerville',Georgia,serif;--sans:'DM Sans',-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1100px;margin:0 auto;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;height:56px;
+}
+.nav-name{font-family:var(--serif);font-size:0.95rem;color:var(--text);letter-spacing:0.02em;font-weight:700;text-decoration:none}
+.nav-back{
+  font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text-dim);text-decoration:none;font-weight:500;transition:color 0.3s;
+}
+.nav-back:hover{color:var(--accent)}
+
+.project-hero{max-width:800px;margin:0 auto;padding:7rem 2rem 2rem}
+.project-category{
+  font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:0.8rem;
+}
+.project-hero h1{
+  font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:400;line-height:1.3;margin-bottom:1.2rem;
+}
+.project-hero .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem}
+.tag{
+  font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.22rem 0.55rem;background:var(--accent-light);color:var(--accent);
+  border-radius:2px;font-weight:500;
+}
+
+.carousel-section{max-width:900px;margin:0 auto 2.5rem;padding:0 2rem}
+.carousel{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#f0f0f4;border:1px solid var(--border);border-radius:3px}
+.carousel-track{display:flex;transition:transform 0.5s ease;height:100%;width:100%}
+.carousel-slide{
+  min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#eef0f4 0%,#e4e6ec 100%);
+}
+.carousel-slide .ph{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
+.carousel-nav{position:absolute;bottom:0.8rem;right:1rem;display:flex;gap:0.5rem;z-index:2}
+.carousel-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--border);border:none;
+  cursor:pointer;transition:all 0.3s;padding:0;
+}
+.carousel-dot.active{background:var(--accent);transform:scale(1.3)}
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.85);border:1px solid var(--border);color:var(--text-muted);
+  width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:0.75rem;z-index:2;border-radius:2px;transition:all 0.3s;
+}
+.carousel-btn:hover{color:var(--accent);border-color:var(--accent)}
+.carousel-btn.prev{left:0.8rem}
+.carousel-btn.next{right:0.8rem}
+
+.content{max-width:800px;margin:0 auto;padding:0 2rem 4rem}
+.content h2{
+  font-family:var(--serif);font-size:1.15rem;font-weight:400;
+  margin:2rem 0 0.8rem;color:var(--text);
+}
+.content p{font-size:0.92rem;color:var(--text-muted);line-height:1.85;margin-bottom:1rem;font-weight:300}
+.content ul{margin:0.5rem 0 1rem 1.2rem;color:var(--text-muted);font-size:0.92rem;line-height:1.85;font-weight:300}
+.content ul li{margin-bottom:0.3rem}
+
+.project-links{
+  display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2rem;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+}
+.project-links a{
+  font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text-dim);text-decoration:none;font-weight:500;
+  border-bottom:1px solid var(--border);padding-bottom:2px;transition:all 0.3s;
+}
+.project-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;margin-top:2rem}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:0.6rem;flex-wrap:wrap}
+.footer-links a{
+  color:var(--text-muted);text-decoration:none;font-size:0.75rem;
+  letter-spacing:0.06em;text-transform:uppercase;font-weight:500;transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--accent)}
+footer p{font-size:0.72rem;color:var(--text-dim)}
+
+@media(max-width:768px){
+  .project-hero{padding:6rem 1.5rem 1.5rem}
+  .carousel-section,.content{padding-left:1.5rem;padding-right:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-name">Arman Ibrayeva</a>
+    <a href="../index.html" class="nav-back">&#8592; All projects</a>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="project-category">Medical Robots</div>
+  <h1>HRI Failure Detection in Emergency Medicine</h1>
+  <div class="tags"><span class="tag">PyTorch</span><span class="tag">MediaPipe</span><span class="tag">BiLSTM/GRU</span><span class="tag">HRI</span><span class="tag">Cornell Tech</span></div>
+</section>
+
+<div class="carousel-section">
+  <div class="carousel" data-carousel>
+    <div class="carousel-track">
+      <div class="carousel-slide"><span class="ph">Crash Cart Robot, Lab Setup</span></div>
+      <div class="carousel-slide"><span class="ph">Participant Interaction Session</span></div>
+      <div class="carousel-slide"><span class="ph">Failure Detection Pipeline</span></div>
+      <div class="carousel-slide"><span class="ph">HRNN Architecture</span></div>
+    </div>
+    <button class="carousel-btn prev">&larr;</button>
+    <button class="carousel-btn next">&rarr;</button>
+    <div class="carousel-nav"></div>
+  </div>
+</div>
+
+<div class="content">
+<h2>Overview</h2>
+<p>Benchmark model on robot failure detection and categorization from users' facial reactions, accounting for inter-dependent interaction sessions and modeling longitudinal user adaptation across repeated failures. AUC 0.90 across 41 participants.</p>
+
+<h2>Dataset</h2>
+<p>Multimodal dataset of crash cart robot failures. The crash cart task: user asks "where is item?", robot should indicate drawer and lights. Failures are intentional (timing delay, speech/incorrect answer, comprehension, search). Each participant completes 5 trials (1 success + 4 failure types) in random order. Data includes MediaPipe features (AU, gaze, landmarks, pose), metadata, survey responses, and transcripts.</p>
+
+<h2>Key Contribution</h2>
+<p>Trial order affects reactions (first failure triggers surprise, fourth triggers frustration). No prior work models this cross-trial history dependence computationally. The history-aware HRNN architecture processes previous trial embeddings and labels to provide session context.</p>
+
+<h2>Statistical Analysis</h2>
+<p>Analyzed 214 embodied HRI sessions with feature engineering over 4,000+ verbal and nonverbal features. Repeated-measures statistical tests (permutation tests, GEE, Friedman) to analyze robot failures and recovery strategies that restore user trust.</p>
+  <div class="project-links">
+    <a href="#">IROS 2026 (under review)</a>
+    <a href="#">THRI (under review)</a>
+    <a href="#">Dataset</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:ai342@cornell.edu">Email</a>
+    <a href="https://www.linkedin.com/in/arman-ibrayeva/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=jTw7rWgAAAAJ" target="_blank">Google Scholar</a>
+    <a href="https://github.com/armanibrayeva" target="_blank">GitHub</a>
+  </div>
+  <p>Dr. Arman Ibrayeva, Cornell Tech, New York</p>
+</footer>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(c=>{
+  const t=c.querySelector('.carousel-track'),s=t.querySelectorAll('.carousel-slide'),
+  n=c.querySelector('.carousel-nav'),p=c.querySelector('.prev'),x=c.querySelector('.next');
+  let i=0;
+  s.forEach((_,j)=>{const d=document.createElement('button');d.className='carousel-dot'+(j===0?' active':'');d.addEventListener('click',()=>g(j));n.appendChild(d)});
+  function g(j){i=j;t.style.transform=`translateX(-${i*100}%)`;n.querySelectorAll('.carousel-dot').forEach((d,k)=>d.classList.toggle('active',k===i))}
+  p.addEventListener('click',()=>g((i-1+s.length)%s.length));
+  x.addEventListener('click',()=>g((i+1)%s.length));
+  let iv=setInterval(()=>g((i+1)%s.length),4500);
+  c.addEventListener('mouseenter',()=>clearInterval(iv));
+  c.addEventListener('mouseleave',()=>{iv=setInterval(()=>g((i+1)%s.length),4500)});
+});
+</script>
+</body>
+</html>

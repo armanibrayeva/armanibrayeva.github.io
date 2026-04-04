@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Arman Ibrayeva | Robotics Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f7f7f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafe;
+  --accent: #1b2e5a;
+  --accent-light: rgba(27,46,90,0.07);
+  --text: #1a1a1a;
+  --text-muted: #4a4a52;
+  --text-dim: #8c8c96;
+  --border: #e2e2e8;
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1100px;margin:0 auto;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;height:56px;
+}
+.nav-name{font-family:var(--serif);font-size:0.95rem;color:var(--text);letter-spacing:0.02em;font-weight:700}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{
+  color:var(--text-dim);text-decoration:none;font-size:0.78rem;
+  letter-spacing:0.08em;text-transform:uppercase;font-weight:500;transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--accent)}
+
+.hero{
+  min-height:70vh;display:flex;align-items:center;justify-content:center;
+  padding:8rem 2rem 3rem;
+}
+.hero-content{max-width:680px;text-align:center}
+.hero-label{
+  font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.2rem;font-weight:600;
+}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);
+  font-weight:400;line-height:1.25;margin-bottom:1.5rem;color:var(--text);
+}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-summary{
+  font-size:0.98rem;line-height:1.85;color:var(--text-muted);
+  max-width:600px;margin:0 auto 1rem;font-weight:300;text-align:left;
+}
+.hero-cta{
+  font-size:0.92rem;color:var(--accent);text-align:left;
+  max-width:600px;margin:0 auto;line-height:1.8;
+}
+.hero-cta a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent)}
+.hero-cta a:hover{border-bottom-color:transparent}
+
+.section{max-width:1100px;margin:0 auto;padding:3.5rem 2rem}
+.section-header{
+  display:flex;align-items:baseline;gap:0.8rem;margin-bottom:2.5rem;
+  border-bottom:1px solid var(--border);padding-bottom:0.8rem;
+}
+.section-number{font-family:var(--serif);font-size:0.85rem;color:var(--accent);font-style:italic}
+.section-title{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--text)}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem}
+
+.project-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:3px;
+  overflow:hidden;transition:all 0.35s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04);
+  text-decoration:none;color:inherit;display:block;
+}
+.project-card:hover{
+  border-color:rgba(27,46,90,0.3);transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(0,0,0,0.07);
+}
+
+.card-thumb{
+  width:100%;aspect-ratio:16/10;
+  background:linear-gradient(135deg,#eef0f4 0%,#e4e6ec 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.card-thumb-label{
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-dim);font-weight:500;
+}
+
+.card-body{padding:1.3rem 1.5rem 1.5rem}
+.card-title{
+  font-family:var(--serif);font-size:1rem;font-weight:400;
+  margin-bottom:0.5rem;color:var(--text);line-height:1.4;
+}
+.card-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.7;margin-bottom:0.9rem;font-weight:300}
+.card-tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.card-tag{
+  font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.2rem 0.5rem;background:var(--accent-light);color:var(--accent);
+  border-radius:2px;font-weight:500;
+}
+.card-arrow{
+  display:inline-block;font-size:0.72rem;color:var(--text-dim);
+  letter-spacing:0.08em;text-transform:uppercase;font-weight:500;
+  margin-top:0.8rem;transition:color 0.3s;
+}
+.project-card:hover .card-arrow{color:var(--accent)}
+
+footer{
+  border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;margin-top:3rem;
+}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:0.8rem;flex-wrap:wrap}
+.footer-links a{
+  color:var(--text-muted);text-decoration:none;font-size:0.78rem;
+  letter-spacing:0.06em;text-transform:uppercase;font-weight:500;transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--accent)}
+footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
+
+@media(max-width:768px){
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:0.7rem}
+  .projects-grid{grid-template-columns:1fr}
+  .hero{padding:7rem 1.5rem 2rem}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp 0.7s ease both}
+.hero-label{animation-delay:0.1s}
+.hero h1{animation-delay:0.2s}
+.hero-summary:first-of-type{animation-delay:0.35s}
+.hero-summary:last-of-type{animation-delay:0.45s}
+.hero-cta{animation-delay:0.55s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" style="text-decoration:none"><div class="nav-name">Arman Ibrayeva</div></a>
+    <ul class="nav-links">
+      <li><a href="#walking">Walking Robot</a></li>
+      <li><a href="#medical">Medical</a></li>
+      <li><a href="#industrial">Industrial</a></li>
+      <li><a href="#small">Small Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Robotics Researcher / Principal Investigator</div>
+    <h1>Designing <em>intelligent robots</em> from concept to deployment</h1>
+    <p class="hero-summary">
+      Robotics researcher and Principal Investigator with 7+ years developing intelligent robotic systems across medical, automotive, nuclear, and agricultural industries. Led end-to-end development from funding acquisition and concept design through hardware prototyping and real-world deployment. 30+ publications in top venues, 5 patents. PhD in Robotic Systems. Deputy Chair of IFToMM Robotics.
+    </p>
+    <p class="hero-summary">
+      Currently a Postdoctoral Fellow at Cornell Tech (AIRLab), working on human-robot interaction for emergency medicine. Developing benchmark models for robot failure detection from users' facial reactions, modeling longitudinal user adaptation across repeated failures (AUC 0.90, 41 participants). Feature engineering over 4,000+ verbal and nonverbal features from 214 embodied HRI sessions. Papers under review at IROS 2026 and THRI.
+    </p>
+    <p class="hero-cta">
+      I am searching for new opportunities to grow. Please reach out at <a href="mailto:ai342@cornell.edu">ai342@cornell.edu</a>
+    </p>
+  </div>
+</section>
+
+<!-- WALKING ROBOT -->
+<section class="section" id="walking">
+  <div class="section-header">
+    <span class="section-number">I.</span>
+    <h2 class="section-title">Walking Robot</h2>
+  </div>
+  <div class="projects-grid">
+
+    <a class="project-card" href="projects/walking-robot.html">
+      <div class="card-thumb"><span class="card-thumb-label">Walking Robot, Prototype</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Intelligent Walking Robot with Decoupled Motion</h3>
+        <p class="card-desc">Development of synthesis methods and optimization of walking robot structural and metric parameters based on functional division of motors. 16 publications including a patent.</p>
+        <div class="card-tags">
+          <span class="card-tag">SolidWorks</span>
+          <span class="card-tag">ROS</span>
+          <span class="card-tag">Gazebo</span>
+          <span class="card-tag">LiDAR</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/exoskeleton.html">
+      <div class="card-thumb"><span class="card-thumb-label">Lower Limb Exoskeleton</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Lower Limb Exoskeleton with Biomechanical Feedback</h3>
+        <p class="card-desc">Multi-criteria optimized rehabilitation exoskeleton with real-time deep learning-based control utilizing biomechanical signals. 4 journal and conference papers.</p>
+        <div class="card-tags">
+          <span class="card-tag">ANSYS</span>
+          <span class="card-tag">Deep Learning</span>
+          <span class="card-tag">EMG/IMU</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- MEDICAL ROBOTS -->
+<section class="section" id="medical">
+  <div class="section-header">
+    <span class="section-number">II.</span>
+    <h2 class="section-title">Medical Robots</h2>
+  </div>
+  <div class="projects-grid">
+
+    <a class="project-card" href="projects/hri-cornell.html">
+      <div class="card-thumb"><span class="card-thumb-label">HRI Failure Detection</span></div>
+      <div class="card-body">
+        <h3 class="card-title">HRI Failure Detection in Emergency Medicine</h3>
+        <p class="card-desc">Benchmark model for robot failure detection and categorization from users' facial reactions in emergency department settings. History-aware architecture modeling longitudinal user adaptation.</p>
+        <div class="card-tags">
+          <span class="card-tag">PyTorch</span>
+          <span class="card-tag">MediaPipe</span>
+          <span class="card-tag">BiLSTM/GRU</span>
+          <span class="card-tag">HRI</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/pandemic-robotics.html">
+      <div class="card-thumb"><span class="card-thumb-label">Pandemic Medical Robotics</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Pandemic Medical Robotics Complex ($784K)</h3>
+        <p class="card-desc">Robotic complex consisting of a saliva sampling parallel manipulator, patient care assistant, high-payload transporter, and autonomous disinfector with microreactor system.</p>
+        <div class="card-tags">
+          <span class="card-tag">Parallel Robot</span>
+          <span class="card-tag">ROS</span>
+          <span class="card-tag">Patent</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/fracture-reduction.html">
+      <div class="card-thumb"><span class="card-thumb-label">R.ALFRED System</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Autonomous Robotic Femoral Fracture Reduction</h3>
+        <p class="card-desc">R.ALFRED: parallel-structure robot utilizing 2D X-ray imaging to reconstruct 3D bone models for trajectory planning. Identifies corresponding points on fractured segments and computes optimal surgical trajectories.</p>
+        <div class="card-tags">
+          <span class="card-tag">Parallel Robot</span>
+          <span class="card-tag">3D Reconstruction</span>
+          <span class="card-tag">World Bank</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/gait-analysis.html">
+      <div class="card-thumb"><span class="card-thumb-label">Gait Analysis</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Neuromechanical Gait Quantification</h3>
+        <p class="card-desc">Quantification of neuromechanical control of human gait using self-supervised learning. Analysis of ~250-channel neuromechanical signals from EMG, IMU, and insole sensors. Collaborative research with Columbia University.</p>
+        <div class="card-tags">
+          <span class="card-tag">EMG/IMU</span>
+          <span class="card-tag">Self-Supervised</span>
+          <span class="card-tag">MATLAB</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/sarcopenia.html">
+      <div class="card-thumb"><span class="card-thumb-label">Sarcopenia Analysis</span></div>
+      <div class="card-body">
+        <h3 class="card-title">AI-based Sarcopenia and Athletic Injury Analysis</h3>
+        <p class="card-desc">ML/CV musculoskeletal analysis systems for clinical diagnosis from low-quality phone video. Post-injury functional tests and AI-based rehabilitation analysis. 500+ engineered features, 97% accuracy.</p>
+        <div class="card-tags">
+          <span class="card-tag">TensorFlow</span>
+          <span class="card-tag">MediaPipe</span>
+          <span class="card-tag">AWS</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- INDUSTRIAL -->
+<section class="section" id="industrial">
+  <div class="section-header">
+    <span class="section-number">III.</span>
+    <h2 class="section-title">Industrial</h2>
+  </div>
+  <div class="projects-grid">
+
+    <a class="project-card" href="projects/agro-robot.html">
+      <div class="card-thumb"><span class="card-thumb-label">Agricultural Robot</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Autonomous Agricultural Robot ($200K)</h3>
+        <p class="card-desc">Secured $200K in funding to develop an autonomous field robot with multi-modal perception and deep RL for real-time plant disease detection and localization in greenhouse environments.</p>
+        <div class="card-tags">
+          <span class="card-tag">Deep RL</span>
+          <span class="card-tag">Computer Vision</span>
+          <span class="card-tag">Autonomous Nav</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/allur-welding.html">
+      <div class="card-thumb"><span class="card-thumb-label">ALLUR Automotive</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Automotive Robotics for ALLUR ($1M)</h3>
+        <p class="card-desc">Development of five robotic complexes for industrial applications: metal part marking with VIN codes, welding automation (spot, laser, protective gas), and three mobile robotic platforms for part transport in assembly lines and warehouses.</p>
+        <div class="card-tags">
+          <span class="card-tag">MPC</span>
+          <span class="card-tag">RL</span>
+          <span class="card-tag">6-DOF</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/kazatomprom.html">
+      <div class="card-thumb"><span class="card-thumb-label">Kazatomprom Uranium</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Uranium Production Robotization ($1M/yr)</h3>
+        <p class="card-desc">Robotic complex (RTK-TUK-118) performing the entire cycle of operations from removing and closing the lid, evenly filling HCPU, taking samples, to closing the lid. Replacing manual labor and minimizing radiation exposure.</p>
+        <div class="card-tags">
+          <span class="card-tag">Nuclear</span>
+          <span class="card-tag">Automation</span>
+          <span class="card-tag">NDT</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/rod-pumping.html">
+      <div class="card-thumb"><span class="card-thumb-label">Rod Pumping Unit</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Novel Rod Pumping Unit for Oil and Gas</h3>
+        <p class="card-desc">Novel design eliminating the massive horse-head balancer, reducing foundation requirements, and improving force transmission. Co-authored 2 patents and 1 journal article.</p>
+        <div class="card-tags">
+          <span class="card-tag">Dynamics</span>
+          <span class="card-tag">ADAMS</span>
+          <span class="card-tag">2 Patents</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SMALL PROJECTS -->
+<section class="section" id="small">
+  <div class="section-header">
+    <span class="section-number">IV.</span>
+    <h2 class="section-title">Small Projects</h2>
+  </div>
+  <div class="projects-grid">
+
+    <a class="project-card" href="projects/baby-robot.html">
+      <div class="card-thumb"><span class="card-thumb-label">Baby Robot</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Baby Robot: Safe Reinforcement Learning (KAUST)</h3>
+        <p class="card-desc">Applied human development principles to a robotic baby mimicking child growth. Starting small and gradually increasing in size, the robot minimizes damage from failures during early stages of training. 2x safer RL training. Hardware-validated balance.</p>
+        <div class="card-tags">
+          <span class="card-tag">Safe RL</span>
+          <span class="card-tag">PyBullet</span>
+          <span class="card-tag">Curriculum Learning</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="projects/drone.html">
+      <div class="card-thumb"><span class="card-thumb-label">Drone Navigation</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Drone Navigation in Non-Newtonian Frame (IDSIA)</h3>
+        <p class="card-desc">Computer vision-based robust control system for drone navigation in a non-Newtonian reference frame. Validated in both CoppeliaSim simulation and hardware tests with OptiTrack. Supervised by Prof. Jurgen Schmidhuber.</p>
+        <div class="card-tags">
+          <span class="card-tag">ROS</span>
+          <span class="card-tag">OpenCV</span>
+          <span class="card-tag">OptiTrack</span>
+        </div>
+        <span class="card-arrow">View project &#8594;</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:ai342@cornell.edu">Email</a>
+    <a href="https://www.linkedin.com/in/arman-ibrayeva/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=jTw7rWgAAAAJ" target="_blank">Google Scholar</a>
+    <a href="https://github.com/armanibrayeva" target="_blank">GitHub</a>
+  </div>
+  <p>Dr. Arman Ibrayeva, Cornell Tech, New York</p>
+</footer>
+
+</body>
+</html>
