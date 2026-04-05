@@ -79,7 +79,6 @@ nav{
 .project-card{
   background:var(--bg-card);border:1px solid var(--border);border-radius:3px;
   overflow:hidden;transition:all 0.35s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04);
-  text-decoration:none;color:inherit;display:block;
 }
 .project-card:hover{
   border-color:rgba(27,46,90,0.3);transform:translateY(-3px);
@@ -114,37 +113,6 @@ nav{
   margin-top:0.8rem;transition:color 0.3s;
 }
 .project-card:hover .card-arrow{color:var(--accent)}
-
-.card-image{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-.card-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:0.8rem;
-  align-items:center;
-  margin-top:0.8rem;
-}
-.card-link{
-  font-size:0.72rem;
-  color:var(--accent);
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  font-weight:600;
-  text-decoration:none;
-}
-.card-link:hover{text-decoration:underline}
-.media-placeholder{
-  border:1px dashed var(--border);
-  padding:1.5rem;
-  color:var(--text-muted);
-  font-size:0.92rem;
-  background:var(--bg-alt);
-}
-
 
 footer{
   border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;margin-top:3rem;
@@ -215,17 +183,17 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
   </div>
   <div class="projects-grid">
 
-    <a class="project-card" href="projects/walking-robot.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/WR_Model4.png" alt="Walking robot" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Intelligent Walking Robot with Decoupled Motion</h3>
         <p class="card-desc">Development of synthesis methods and optimization of walking robot structural and metric parameters based on functional division of motors. 16 publications including a patent.</p>
         <div class="card-actions">
-          <a class="card-link" href="https://ieeexplore.ieee.org/abstract/document/9931670" target="_blank" onclick="event.stopPropagation();">Example paper</a>
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="card-link" href="https://ieeexplore.ieee.org/abstract/document/9931670" target="_blank">Example paper</a>
+          <a class="project-link" href="projects/walking-robot.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -237,64 +205,64 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
   </div>
   <div class="projects-grid">
 
-    <a class="project-card" href="projects/hri-cornell.html">
+    <div class="project-card">
       <div class="card-thumb"><span class="card-thumb-label">HRI Failure Detection</span></div>
       <div class="card-body">
         <h3 class="card-title">HRI Failure Detection in Emergency Medicine</h3>
         <p class="card-desc">Benchmark model for robot failure detection and categorization from users' facial reactions in emergency department settings. History-aware architecture modeling longitudinal user adaptation.</p>
         <div class="card-actions">
-          <a class="card-link" href="https://drive.google.com/file/d/1fHivpK6NYhPvHbAEoweb74b6BpAEh92w/view" target="_blank" onclick="event.stopPropagation();">Example paper</a>
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="card-link" href="https://drive.google.com/file/d/1fHivpK6NYhPvHbAEoweb74b6BpAEh92w/view" target="_blank">Example paper</a>
+          <a class="project-link" href="projects/hri-cornell.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
 
-    <a class="project-card" href="projects/exoskeleton.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/Exoskeleton3.png" alt="Exoskeleton" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Lower Limb Exoskeleton with Biomechanical Feedback</h3>
         <p class="card-desc">Multi-criteria optimized rehabilitation exoskeleton with real-time deep learning-based control utilizing biomechanical signals. 4 journal and conference papers.</p>
         <div class="card-actions">
-          <a class="card-link" href="https://www.mdpi.com/2076-3417/13/23/12781" target="_blank" onclick="event.stopPropagation();">Example paper</a>
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="card-link" href="https://www.mdpi.com/2076-3417/13/23/12781" target="_blank">Example paper</a>
+          <a class="project-link" href="projects/exoskeleton.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
     
-    <a class="project-card" href="projects/pandemic-robotics.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/Saliva2.png" alt="Pandemic robotics" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Pandemic Medical Robotics Complex ($784K)</h3>
         <p class="card-desc">Robotic complex consisting of a saliva sampling parallel manipulator, patient care assistant, high-payload transporter, and autonomous disinfector with microreactor system. Includes patent-backed development.</p>
         <div class="card-actions">
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="project-link" href="projects/pandemic-robotics.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
-    <a class="project-card" href="projects/fracture-reduction.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/Surgery3D.jpg" alt="Surgery 3D" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Autonomous Robotic Femoral Fracture Reduction</h3>
         <p class="card-desc">R.ALFRED: parallel-structure robot utilizing 2D X-ray imaging to reconstruct 3D bone models for trajectory planning. Identifies corresponding points on fractured segments and computes optimal surgical trajectories.</p>
         <div class="card-actions">
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="project-link" href="projects/fracture-reduction.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
  
-    <a class="project-card" href="projects/sarcopenia.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/RoCA1.png" alt="Sarcopenia analysis" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">AI-based Sarcopenia and Athletic Injury Analysis</h3>
         <p class="card-desc">ML/CV musculoskeletal analysis systems for clinical diagnosis from low-quality phone video. Post-injury functional tests and AI-based rehabilitation analysis. 500+ engineered features, 97% accuracy.</p>
         <div class="card-actions">
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="project-link" href="projects/sarcopenia.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
   </div>
 </section>
@@ -316,43 +284,44 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
       </div>
     </a>
 
-    <a class="project-card" href="projects/allur-welding.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/auto1.jpg" alt="Automotive robotics" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Automotive Robotics for ALLUR ($1M)</h3>
         <p class="card-desc">Development of five robotic complexes for industrial applications: metal part marking with VIN codes, welding automation (spot, laser, protective gas), and three mobile robotic platforms for part transport in assembly lines and warehouses.</p>
         <div class="card-actions">
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="project-link" href="projects/allur-welding.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
-    <a class="project-card" href="projects/kazatomprom.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/uranium2.png" alt="Uranium robotization" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Uranium Production Robotization ($1M/yr)</h3>
         <p class="card-desc">Robotic complex (RTK-TUK-118) performing the entire cycle of operations from removing and closing the lid, evenly filling HCPU, taking samples, to closing the lid. Replacing manual labor and minimizing radiation exposure.</p>
         <div class="card-actions">
-          <a class="card-link" href="https://github.com/armanibrayeva/Robotization-of-Uranium-Production" target="_blank" onclick="event.stopPropagation();">Project link</a>
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="card-link" href="https://github.com/armanibrayeva/Robotization-of-Uranium-Production" target="_blank">Project link</a>
+          <a class="project-link" href="projects/kazatomprom.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
-    <a class="project-card" href="projects/rod-pumping.html">
+    <div class="project-card">
       <div class="card-thumb"><img src="projects/oilgas2.png" alt="Rod pumping unit" class="card-image"></div>
       <div class="card-body">
         <h3 class="card-title">Novel Rod Pumping Unit for Oil and Gas</h3>
         <p class="card-desc">Novel design eliminating the massive horse-head balancer, reducing foundation requirements, and improving force transmission. Co-authored 2 patents and 1 journal article.</p>
         <div class="card-actions">
-          <a class="card-link" href="https://doi.org/10.15587/1729-4061.2020.218551" target="_blank" onclick="event.stopPropagation();">Example paper</a>
-          <span class="card-arrow">View project &#8594;</span>
+          <a class="card-link" href="https://doi.org/10.15587/1729-4061.2020.218551" target="_blank">Example paper</a>
+          <a class="project-link" href="projects/rod-pumping.html">View project &#8594;</a>
         </div>
       </div>
-    </a>
+    </div>
 
   </div>
 </section>
+
 
 <section class="section" id="media">
   <div class="section-header">
@@ -360,7 +329,7 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
     <h2 class="section-title">Media About Me</h2>
   </div>
   <div class="media-placeholder">
-    Media links and interviews will be added here.
+    Placeholder for interviews, press coverage, talks, and media links.
   </div>
 </section>
 
