@@ -72,6 +72,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center;ma
 .footer-links a:hover{color:var(--accent)}
 footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
 
+.media-thumb{flex-direction:column;gap:0.5rem;padding:1.6rem 1.2rem;background:linear-gradient(135deg,#f4f6fb 0%,#e7ebf3 100%);text-align:center}
+.media-thumb-outlet{font-family:var(--serif);font-size:1.05rem;color:var(--accent);font-style:italic;line-height:1.3}
+.media-thumb-tag{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);font-weight:500}
+.media-actions-wrap{flex-wrap:wrap;gap:0.5rem 0.9rem;margin-top:0.9rem}
+
 @media(max-width:768px){
   .nav-links{gap:1rem}.nav-links a{font-size:0.7rem}
   .projects-grid{grid-template-columns:1fr}
@@ -92,6 +97,7 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
       <li><a href="#walking">Walking Robot</a></li>
       <li><a href="#medical">Medical</a></li>
       <li><a href="#industrial">Industrial</a></li>
+      <li><a href="#media">Press</a></li>
     </ul>
   </div>
 </nav>
@@ -268,10 +274,101 @@ footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.03em}
 <section class="section" id="media">
   <div class="section-header">
     <span class="section-number">IV.</span>
-    <h2 class="section-title">Media About Me</h2>
+    <h2 class="section-title">Press &amp; Media</h2>
   </div>
-  <div style="color:var(--text-dim);font-size:0.85rem">
-    Placeholder for interviews, press coverage, talks, and media links.
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">weproject.media</span>
+        <span class="media-thumb-tag">Russian &middot; Interview</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">On Cornell University, AI research, and myths about poor scientists</h3>
+        <p class="card-desc">Long-form interview on the move to Cornell, the realities of AI and robotics research, and challenging stereotypes about an academic career path.</p>
+        <div class="card-actions">
+          <a class="card-link" href="https://weproject.media/articles/detail/arman-ibraeva-o-rabote-v-cornell-university-issledovaniyakh-v-oblasti-ai-i-mifakh-o-bednykh-uchenykh/" target="_blank">Read article &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">kazpress.kz</span>
+        <span class="media-thumb-tag">English &middot; Feature</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">When Robots Grow Like Children: A Vision for Safer, Smarter AI</h3>
+        <p class="card-desc">Feature on child-inspired curriculum learning in robotics and what it means to develop AI systems that mature gradually rather than arrive fully formed.</p>
+        <div class="card-actions">
+          <a class="card-link" href="https://kazpress.kz/news/when-robots-grow-like-children-arman-ibrayevas-vision-for-safer-smarter-ai-b678f8/" target="_blank">Read article &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">kazpress.kz</span>
+        <span class="media-thumb-tag">English &middot; Interview</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Medical Robots Must Have Empathy</h3>
+        <p class="card-desc">Conversation on empathy, trust, and the human factors that determine whether robots succeed in clinical and emergency-care environments.</p>
+        <div class="card-actions">
+          <a class="card-link" href="https://kazpress.kz/news/medical-robots-must-have-empathy-dr-arman-ibrayeva-about-robots-in-medicine-a5c8a8/" target="_blank">Read article &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">kazpress.kz</span>
+        <span class="media-thumb-tag">English &middot; Profile</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Building Robots That Heal, Help, and Think Like Us</h3>
+        <p class="card-desc">Profile of cross-disciplinary work spanning rehabilitation exoskeletons, surgical robots, and human-aware navigation in shared environments.</p>
+        <div class="card-actions">
+          <a class="card-link" href="https://kazpress.kz/news/arman-ibrayeva-is-building-robots-that-heal-help-and-think-like-us-205b99/" target="_blank">Read article &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">Eight outlets</span>
+        <span class="media-thumb-tag">Feb 2025 &middot; Research coverage</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Fivefold Cost Reduction for Aerospace-Industry Sensors</h3>
+        <p class="card-desc">Federal science media coverage of collaborative research on piezoelectric thin-film sensors for aviation manufacturing, with new processing methods cutting unit production cost approximately fivefold.</p>
+        <div class="card-actions media-actions-wrap">
+          <a class="card-link" href="https://nauka.tass.ru/nauka/23149693" target="_blank">TASS Science</a>
+          <a class="card-link" href="https://www.minobrnauki.gov.ru/press-center/news/nauka/95672/" target="_blank">Ministry of Science</a>
+          <a class="card-link" href="https://pnzgu.ru/news/2025/02/18/11021528" target="_blank">Penza State Univ.</a>
+          <a class="card-link" href="https://e-cis.info/news/569/125470/" target="_blank">CIS Portal</a>
+          <a class="card-link" href="https://www.aviaport.ru/news/nayden-sposob-snizit-v-pyat-raz-zatraty-na-proizvodstvo-datchikov-dlya-aviaproma/" target="_blank">AviaPort</a>
+          <a class="card-link" href="https://www.innovanews.ru/info/news/transport/sekret-prochnosti-uchenye-peresobrali-datchiki-dlja-raket/" target="_blank">Innovanews</a>
+          <a class="card-link" href="https://www1.ru/news/2025/02/15/ucenye-pgu-razrabotali-sposob-v-piat-raz-sokratit-zatraty-na-proizvodstvo-datcikov-dlia-aviaproma.html" target="_blank">www1.ru</a>
+          <a class="card-link" href="https://trashbox.ru/link/2025-02-15-nashli-sposob-v-pyat-raz-snizit-rashody" target="_blank">Trashbox</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-thumb media-thumb">
+        <span class="media-thumb-outlet">Sputnik Kazakhstan</span>
+        <span class="media-thumb-tag">Russian &middot; Research coverage</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Russian and Kazakh Scientists Collaborate on Space Research</h3>
+        <p class="card-desc">Coverage of bilateral aerospace and space-research collaboration between scientists in Russia and Kazakhstan, February 2025.</p>
+        <div class="card-actions">
+          <a class="card-link" href="https://ru.sputnik.kz/20250227/rossiyskie-i-kazakhstanskie-uchenye-soobscha-rabotayut-na-kosmos-51206032.html" target="_blank">Read article &#8594;</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
